@@ -57,6 +57,7 @@ class FavoriteFragment : Fragment(), OnFavoriteMealClickListener {
 
     private fun getDataFromDatabase() {
         localDatabaseViewModel.getAllMealsFromDB()
+        localDatabaseViewModel.getAllMealsIdFromFireStore()
     }
 
     private fun favoriteMealsObserver() {

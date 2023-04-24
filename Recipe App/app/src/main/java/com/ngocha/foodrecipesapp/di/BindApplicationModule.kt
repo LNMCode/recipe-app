@@ -2,12 +2,16 @@ package com.ngocha.foodrecipesapp.di
 
 import com.ngocha.foodrecipesapp.data.repository.accuracy.AccuracyRepository
 import com.ngocha.foodrecipesapp.data.repository.accuracy.AccuracyRepositoryImpl
+import com.ngocha.foodrecipesapp.data.repository.favorite.FavoriteRepository
+import com.ngocha.foodrecipesapp.data.repository.favorite.FavoriteRepositoryImpl
 import com.ngocha.foodrecipesapp.data.repository.localMeal.LocalMealRepository
 import com.ngocha.foodrecipesapp.data.repository.localMeal.LocalMealRepositoryImpl
 import com.ngocha.foodrecipesapp.data.repository.remoteMeal.RemoteMealRepositoryImpl
 import com.ngocha.foodrecipesapp.data.repository.remoteMeal.RemoteMeatRepository
 import com.ngocha.foodrecipesapp.data.usecases.accuracy.AccuracyUseCase
 import com.ngocha.foodrecipesapp.data.usecases.accuracy.AccuracyUseCaseImpl
+import com.ngocha.foodrecipesapp.data.usecases.favorite.FavoriteUseCase
+import com.ngocha.foodrecipesapp.data.usecases.favorite.FavoriteUseCaseImpl
 import com.ngocha.foodrecipesapp.data.usecases.localMeal.LocalMealUseCase
 import com.ngocha.foodrecipesapp.data.usecases.localMeal.LocalMealUseCaseImpl
 import com.ngocha.foodrecipesapp.data.usecases.remoteMeal.RemoteMealUseCase
@@ -30,10 +34,13 @@ abstract class BindApplicationModule {
     @Singleton
     abstract fun bindRemoteMealRepository(remoteMealRepositoryImpl: RemoteMealRepositoryImpl): RemoteMeatRepository
 
-
     @Binds
     @Singleton
     abstract fun bindAccuracyRepository(accuracyRepositoryImpl: AccuracyRepositoryImpl): AccuracyRepository
+
+    @Binds
+    @Singleton
+    abstract fun bindFavoriteRepository(favoriteRepositoryImpl: FavoriteRepositoryImpl): FavoriteRepository
 
     @Binds
     @Singleton
@@ -46,4 +53,9 @@ abstract class BindApplicationModule {
     @Binds
     @Singleton
     abstract fun bindAccuracyUseCase(accuracyUseCaseImpl: AccuracyUseCaseImpl): AccuracyUseCase
+
+    @Binds
+    @Singleton
+    abstract fun bindFavoriteUseCase(favoriteUseCaseImpl: FavoriteUseCaseImpl): FavoriteUseCase
+
 }
