@@ -22,9 +22,15 @@
     <string name="term_and_condition">By signing in, you agree to our Terms and Conditions and Privacy Policy</string>
     <string name="sign_in">Sign In</string>
     <string name="sign_in_label">Enter your email and password</string>
-    <string name="sign_out">Sign Out</string>
+    <string name="sign_up_label">Register account</string>
+    <string name="sign_out">Log Out</string>
+    <string name="sign_up">Sign Up</string>
     <string name="input_password">Enter password</string>
+    <string name="input_password_confirm">Enter password confirm</string>
     <string name="input_email">Enter email</string>
     <string name="input_email_label">Enter email address</string>
     <string name="input_password_label">Enter your password</string>
+    <string name="input_password_confirm_label">Enter your password confirm</string>
+    <string name="create_account_title">Create an account</string>
+    <string name="login_account_title">Login your account</string>
 </resources>

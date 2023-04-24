@@ -1,5 +1,6 @@
 package com.ngocha.foodrecipesapp.ui.fragments.home
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
@@ -18,6 +19,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.ngocha.foodrecipesapp.common.imageloader.ImageLoader
 import com.ngocha.foodrecipesapp.common.networkManager.NetworkManager
 import com.ngocha.foodrecipesapp.databinding.FragmentHomeBinding
+import com.ngocha.foodrecipesapp.ui.activities.AccuracyActivity
 import com.ngocha.foodrecipesapp.ui.fragments.home.adapter.categories.CategoriesAdapter
 import com.ngocha.foodrecipesapp.ui.fragments.home.adapter.categories.OnCategoryClickListener
 import com.ngocha.foodrecipesapp.ui.fragments.home.adapter.mostpopularmeals.MostPopularMealsAdapter
@@ -78,6 +80,11 @@ class HomeFragment : Fragment(), OnPopularMealsClickListener, OnCategoryClickLis
         setupCategoriesRecyclerView()
         homeViewModel.getAllCategories()
         categoriesObserver()
+        logout()
+
+        binding.btnSearch.setOnClickListener {
+            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToSearchFragment2())
+        }
 
         viewLifecycleOwner.lifecycleScope.launch {
             networkManager.isOnline().collectLatest { isOnline ->
@@ -199,4 +206,17 @@ class HomeFragment : Fragment(), OnPopularMealsClickListener, OnCategoryClickLis
         }
     }
 
+    private fun logout() {
+        binding.logout.setOnClickListener {
+            homeViewModel.logout {
+                navToSignInActivity()
+            }
+        }
+    }
+
+    private fun navToSignInActivity() {
+        val intent = Intent(context, AccuracyActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        startActivity(intent)
+    }
 }

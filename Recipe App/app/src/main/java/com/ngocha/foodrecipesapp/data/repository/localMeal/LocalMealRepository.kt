@@ -1,4 +1,4 @@
-package com.ngocha.foodrecipesapp.data.repository
+package com.ngocha.foodrecipesapp.data.repository.localMeal
 
 import com.ngocha.foodrecipesapp.data.pojo.Meal
 import kotlinx.coroutines.flow.Flow

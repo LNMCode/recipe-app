@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipe_refresh_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/swipe_refresh_layout"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="@dimen/_8sdp"
-    android:padding="@dimen/_4sdp"
-    android:background="@color/white">
+    android:background="@color/white"
+    android:padding="@dimen/_4sdp">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -21,67 +21,76 @@
                 android:id="@+id/tv_home"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@string/home_in_home_fragment"
-                android:textStyle="bold"
-                android:fontFamily="@font/myfont"
                 android:layout_weight="3"
+                android:fontFamily="@font/myfont"
+                android:text="@string/home_in_home_fragment"
                 android:textColor="@color/accent"
                 android:textSize="@dimen/_32sdp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"/>
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/btnSearch"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/search_icon"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_home"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_home" />
+
 
             <TextView
                 android:id="@+id/tv_what_would_you_like_to_eat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
                 android:fontFamily="@font/myfont"
                 android:text="@string/what_would_you_like_to_eat"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_16sdp"
                 android:textStyle="bold"
-                android:layout_marginTop="@dimen/_12sdp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_home"
-                />
+                app:layout_constraintTop_toBottomOf="@id/tv_home" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_view_container"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_160sdp"
-                android:layout_marginTop="@dimen/_4ssp"
                 android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_4ssp"
                 android:layout_marginEnd="@dimen/_20sdp"
                 app:cardCornerRadius="@dimen/_20sdp"
                 app:cardUseCompatPadding="true"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_what_would_you_like_to_eat">
 
                 <ImageView
                     android:id="@+id/img_random_meal"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:scaleType="centerCrop"
-                    android:contentDescription="@string/img_random_meal"/>
+                    android:contentDescription="@string/img_random_meal"
+                    android:scaleType="centerCrop" />
 
                 <ProgressBar
                     android:id="@+id/progress_bar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:visibility="gone"/>
+                    android:visibility="gone" />
 
                 <ImageView
                     android:id="@+id/img_no_internet"
                     android:layout_width="@dimen/_100sdp"
                     android:layout_height="@dimen/_100sdp"
-                    android:src="@drawable/no_internet"
                     android:layout_gravity="center"
-                    android:visibility="gone"
                     android:alpha="0.5"
-                    android:contentDescription="@string/no_internet"/>
+                    android:contentDescription="@string/no_internet"
+                    android:src="@drawable/no_internet"
+                    android:visibility="gone" />
 
             </androidx.cardview.widget.CardView>
 
@@ -89,17 +98,16 @@
                 android:id="@+id/tv_over_popular_item"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/over_popular_items"
+                android:layout_marginTop="@dimen/_12sdp"
                 android:fontFamily="@font/myfont"
+                android:text="@string/over_popular_items"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_16sdp"
                 android:textStyle="bold"
-                android:layout_marginTop="@dimen/_12sdp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/card_view_container"
-                />
+                app:layout_constraintTop_toBottomOf="@id/card_view_container" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rec_view_meals_popular"
@@ -112,24 +120,22 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_over_popular_item"
-                />
+                app:layout_constraintTop_toBottomOf="@id/tv_over_popular_item" />
 
             <TextView
                 android:id="@+id/tv_categories"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/categories_in_home_fragment"
+                android:layout_marginTop="@dimen/_12sdp"
                 android:fontFamily="@font/myfont"
+                android:text="@string/categories_in_home_fragment"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_16sdp"
                 android:textStyle="bold"
-                android:layout_marginTop="@dimen/_12sdp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/rec_view_meals_popular"
-                />
+                app:layout_constraintTop_toBottomOf="@id/rec_view_meals_popular" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rec_view_categories"
@@ -138,12 +144,20 @@
                 android:layout_marginStart="@dimen/_20sdp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="@dimen/_20sdp"
-                android:stateListAnimator="@null"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_categories"
                 android:scrollbars="none"
-                />
+                android:stateListAnimator="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_categories" />
+
+            <Button
+                android:id="@+id/logout"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:text="@string/sign_out"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rec_view_categories" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

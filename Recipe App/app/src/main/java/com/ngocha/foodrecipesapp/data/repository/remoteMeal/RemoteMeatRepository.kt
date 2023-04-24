@@ -1,4 +1,4 @@
-package com.ngocha.foodrecipesapp.data.repository
+package com.ngocha.foodrecipesapp.data.repository.remoteMeal
 
 import com.ngocha.foodrecipesapp.data.pojo.CategoryList
 import com.ngocha.foodrecipesapp.data.pojo.MealByCategoryList
@@ -11,6 +11,8 @@ interface RemoteMeatRepository {
     suspend fun getRandomMeal(): Flow<Response<MealsList>>
 
     suspend fun getMealDetailsById(id: String): Flow<Response<MealsList>>
+
+    suspend fun getMealByName(name: String): Flow<Response<MealsList>>
 
     suspend fun getPopularMeals(categoryName: String): Flow<Response<MealByCategoryList>>
 

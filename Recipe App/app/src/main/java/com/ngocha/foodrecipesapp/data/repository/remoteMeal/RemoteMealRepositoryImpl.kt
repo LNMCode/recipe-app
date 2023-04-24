@@ -1,10 +1,10 @@
-package com.ngocha.foodrecipesapp.data.repository
+package com.ngocha.foodrecipesapp.data.repository.remoteMeal
 
-import com.ngocha.foodrecipesapp.data.localdb.MealDao
+import com.ngocha.foodrecipesapp.data.pojo.MealsList
 import com.ngocha.foodrecipesapp.data.remote.MealApi
-import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.withContext
+import retrofit2.Response
 import javax.inject.Inject
 
 class RemoteMealRepositoryImpl @Inject constructor(
@@ -14,6 +14,8 @@ class RemoteMealRepositoryImpl @Inject constructor(
     override suspend fun getRandomMeal() = flow { emit(api.getRandomMeal()) }
 
     override suspend fun getMealDetailsById(id: String) = flow { emit(api.getMealDetailsById(id)) }
+
+    override suspend fun getMealByName(name: String) = flow { emit(api.getMealByName(name)) }
 
     override suspend fun getPopularMeals(categoryName: String) = flow {
         emit(api.getPopularMeals(categoryName))

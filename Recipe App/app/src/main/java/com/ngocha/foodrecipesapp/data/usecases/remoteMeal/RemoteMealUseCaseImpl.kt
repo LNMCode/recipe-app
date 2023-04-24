@@ -1,7 +1,9 @@
-package com.ngocha.foodrecipesapp.data.usecases
+package com.ngocha.foodrecipesapp.data.usecases.remoteMeal
 
 import com.ngocha.foodrecipesapp.base.BaseUseCase
-import com.ngocha.foodrecipesapp.data.repository.RemoteMeatRepository
+import com.ngocha.foodrecipesapp.data.pojo.MealsList
+import com.ngocha.foodrecipesapp.data.repository.remoteMeal.RemoteMeatRepository
+import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class RemoteMealUseCaseImpl @Inject constructor(
@@ -16,6 +18,10 @@ class RemoteMealUseCaseImpl @Inject constructor(
 
     override suspend fun getPopularMeals(categoryName: String) = handleResponseFlow {
         remoteMealRepository.getPopularMeals(categoryName)
+    }
+
+    override suspend fun getMealByName(name: String)= handleResponseFlow {
+        remoteMealRepository.getMealByName(name)
     }
 
     override suspend fun getAllCategories() = handleResponseFlow {

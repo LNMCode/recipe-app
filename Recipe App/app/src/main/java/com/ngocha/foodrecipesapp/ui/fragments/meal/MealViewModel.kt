@@ -3,7 +3,7 @@ package com.ngocha.foodrecipesapp.ui.fragments.meal
 import androidx.lifecycle.*
 import com.ngocha.foodrecipesapp.base.BaseViewModel
 import com.ngocha.foodrecipesapp.data.pojo.Meal
-import com.ngocha.foodrecipesapp.data.usecases.RemoteMealUseCase
+import com.ngocha.foodrecipesapp.data.usecases.remoteMeal.RemoteMealUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

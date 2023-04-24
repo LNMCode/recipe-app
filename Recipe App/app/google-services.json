@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "650955055617",
+    "project_id": "recipe-app-5bb5a",
+    "storage_bucket": "recipe-app-5bb5a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:650955055617:android:ea6aea13cad28c1270d600",
+        "android_client_info": {
+          "package_name": "com.ngocha.foodrecipesapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "650955055617-3i1dgvf4lnghn645hfsh1djp8vqrokf3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4xfgUofwTPTttN0BA1lILUOusEtdQuaE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "650955055617-3i1dgvf4lnghn645hfsh1djp8vqrokf3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

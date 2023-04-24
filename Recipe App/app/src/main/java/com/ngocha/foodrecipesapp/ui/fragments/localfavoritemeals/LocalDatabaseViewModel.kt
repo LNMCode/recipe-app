@@ -1,15 +1,10 @@
 package com.ngocha.foodrecipesapp.ui.fragments.localfavoritemeals
 
-import android.util.Log
 import androidx.lifecycle.*
 import com.ngocha.foodrecipesapp.base.BaseViewModel
-import com.ngocha.foodrecipesapp.constants.Constants
 import com.ngocha.foodrecipesapp.data.pojo.Meal
-import com.ngocha.foodrecipesapp.data.usecases.LocalMealUseCase
+import com.ngocha.foodrecipesapp.data.usecases.localMeal.LocalMealUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel

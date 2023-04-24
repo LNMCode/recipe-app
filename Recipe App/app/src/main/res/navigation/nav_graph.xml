@@ -16,6 +16,10 @@
         <action
             android:id="@+id/action_homeFragment_to_mealsByCategoriesFragment"
             app:destination="@id/mealsByCategoriesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_searchFragment2"
+            app:destination="@id/searchFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/favoriteFragment"
@@ -79,5 +83,13 @@
         <argument
             android:name="meal"
             app:argType="com.ngocha.foodrecipesapp.data.pojo.Meal" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.ngocha.foodrecipesapp.ui.fragments.search.SearchFragment"
+        android:label="SearchFragment" >
+        <action
+            android:id="@+id/action_searchFragment_to_mealFragment"
+            app:destination="@id/mealFragment" />
     </fragment>
 </navigation>

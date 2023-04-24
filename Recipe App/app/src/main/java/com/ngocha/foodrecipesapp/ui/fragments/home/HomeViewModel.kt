@@ -5,13 +5,16 @@ import com.ngocha.foodrecipesapp.base.BaseViewModel
 import com.ngocha.foodrecipesapp.data.pojo.Category
 import com.ngocha.foodrecipesapp.data.pojo.MealByCategory
 import com.ngocha.foodrecipesapp.data.pojo.Meal
-import com.ngocha.foodrecipesapp.data.usecases.RemoteMealUseCase
+import com.ngocha.foodrecipesapp.data.usecases.accuracy.AccuracyUseCase
+import com.ngocha.foodrecipesapp.data.usecases.remoteMeal.RemoteMealUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.collect
 import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val remoteMealUseCase: RemoteMealUseCase
+    private val remoteMealUseCase: RemoteMealUseCase,
+    private val accuracyUseCase: AccuracyUseCase,
 ) : BaseViewModel() {
 
     private var _mealRandomMutableLiveData = MutableLiveData<Meal>()
@@ -22,6 +25,7 @@ class HomeViewModel @Inject constructor(
 
     private var _allCategoriesMutableLiveData = MutableLiveData<List<Category>>()
     val allCategoriesLiveData: LiveData<List<Category>> get() = _allCategoriesMutableLiveData
+
 
     fun getRandomMeal() {
         requestFlow {
@@ -43,6 +47,14 @@ class HomeViewModel @Inject constructor(
         requestFlow {
             remoteMealUseCase.getAllCategories().collect { mealList ->
                 _allCategoriesMutableLiveData.postValue(mealList!!.categories)
+            }
+        }
+    }
+
+    fun logout(callBack: () -> Unit) {
+        requestFlow {
+            accuracyUseCase.logout().collect {
+                callBack()
             }
         }
     }

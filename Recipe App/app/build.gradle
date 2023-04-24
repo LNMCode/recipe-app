@@ -12,6 +12,9 @@ plugins {
 
     // for Dagger Hilt
     id 'com.google.dagger.hilt.android'
+
+    //for Firebase
+    id 'com.google.gms.google-services'
 }
 
 // for Dagger Hilt

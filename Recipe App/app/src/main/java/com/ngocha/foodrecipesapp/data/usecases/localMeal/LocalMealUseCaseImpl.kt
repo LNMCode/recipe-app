@@ -1,8 +1,8 @@
-package com.ngocha.foodrecipesapp.data.usecases
+package com.ngocha.foodrecipesapp.data.usecases.localMeal
 
 import com.ngocha.foodrecipesapp.base.BaseUseCase
 import com.ngocha.foodrecipesapp.data.pojo.Meal
-import com.ngocha.foodrecipesapp.data.repository.LocalMealRepository
+import com.ngocha.foodrecipesapp.data.repository.localMeal.LocalMealRepository
 import javax.inject.Inject
 
 class LocalMealUseCaseImpl @Inject constructor(

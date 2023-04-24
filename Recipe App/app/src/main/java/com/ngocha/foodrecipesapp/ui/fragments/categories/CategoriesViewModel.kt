@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.ngocha.foodrecipesapp.base.BaseViewModel
 import com.ngocha.foodrecipesapp.data.pojo.Category
-import com.ngocha.foodrecipesapp.data.usecases.RemoteMealUseCase
+import com.ngocha.foodrecipesapp.data.usecases.remoteMeal.RemoteMealUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
