@@ -1,5 +1,7 @@
 package com.ngocha.foodrecipesapp.di
 
+import com.ngocha.foodrecipesapp.common.accuracy.AccuracyAccount
+import com.ngocha.foodrecipesapp.common.accuracy.AccuracyAccountImpl
 import com.ngocha.foodrecipesapp.common.imageloader.ImageLoader
 import com.ngocha.foodrecipesapp.common.imageloader.ImageLoaderImpl
 import com.ngocha.foodrecipesapp.common.networkManager.NetworkManager
@@ -30,4 +32,8 @@ abstract class BindActivityModule {
     @Binds
     @ActivityScoped
     abstract fun bindNetworkManager(networkManagerImpl: NetworkManagerImpl): NetworkManager
+
+    @Binds
+    @ActivityScoped
+    abstract fun bindAccuracyAccount(accuracyAccountImpl: AccuracyAccountImpl): AccuracyAccount
 }

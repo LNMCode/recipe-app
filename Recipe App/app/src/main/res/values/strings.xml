@@ -19,4 +19,12 @@
     <string name="image_category">image category</string>
     <string name="heart">heart</string>
     <string name="no_internet">no internet</string>
+    <string name="term_and_condition">By signing in, you agree to our Terms and Conditions and Privacy Policy</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_in_label">Enter your email and password</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="input_password">Enter password</string>
+    <string name="input_email">Enter email</string>
+    <string name="input_email_label">Enter email address</string>
+    <string name="input_password_label">Enter your password</string>
 </resources>
